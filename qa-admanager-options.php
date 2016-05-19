@@ -14,6 +14,9 @@ class pt_qa_simple_admanager {
 		$ok = null;
 		if (qa_clicked('np_q_save_button'))
 		{
+
+			qa_opt('pt_q2a_only_not_login_users',(bool)qa_post_text('pt_q2a_only_not_login_users'));
+
 			qa_opt('pt_q2a_ad_after_question',(bool)qa_post_text('pt_q2a_ad_after_question'));
 			qa_opt('pt_q2a_ad_after_question_codebox_0', qa_post_text('pt_q2a_ad_after_question_code_field_0'));
 			qa_opt('pt_q2a_ad_after_question_codebox_1', qa_post_text('pt_q2a_ad_after_question_code_field_1'));
@@ -45,6 +48,13 @@ class pt_qa_simple_admanager {
 		));
 
 		$fields = array();
+
+		$fields[] = array(
+			'label' => 'Is Ad shown to users who are not logged in',
+			'type' => 'checkbox',
+			'value' => qa_opt('pt_q2a_only_not_login_users'),
+			'tags' => 'NAME="pt_q2a_only_not_login_users"',
+		);
 
 		$fields[] = array(
 			'label' => 'Ad after Question',

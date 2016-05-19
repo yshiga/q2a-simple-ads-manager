@@ -8,7 +8,10 @@ class qa_html_theme_layer extends qa_html_theme_base {
         {
 			  qa_html_theme_base::q_view($q_view);
 
-			  if (qa_opt('pt_q2a_ad_after_question'))
+
+			  if (qa_opt('pt_q2a_ad_after_question')
+          && (qa_opt('pt_q2a_only_not_login_users') && !qa_is_logged_in())
+        )
 			   {
            $index = rand (0, 2);
            $this->output(qa_opt('pt_q2a_ad_after_question_codebox_' . $index));
@@ -21,7 +24,9 @@ class qa_html_theme_layer extends qa_html_theme_base {
         {
            qa_html_theme_base::header();
 
-		   if (qa_opt('pt_q2a_ad_after_menu_bar'))
+		   if (qa_opt('pt_q2a_ad_after_menu_bar')
+          && (qa_opt('pt_q2a_only_not_login_users') && !qa_is_logged_in())
+       )
 		   {
 				$this->output(qa_opt('pt_q2a_ad_after_menu_bar_codebox'));
 		   }
@@ -33,7 +38,9 @@ class qa_html_theme_layer extends qa_html_theme_base {
         {
             qa_html_theme_base::a_list($a_list);
 
-		   if (qa_opt('pt_q2a_ad_after_all_answers'))
+		   if (qa_opt('pt_q2a_ad_after_all_answers')
+          && (qa_opt('pt_q2a_only_not_login_users') && !qa_is_logged_in())
+       )
 		   {
 				$this->output(qa_opt('pt_q2a_ad_after_all_answers_codebox'));
 		   }
@@ -46,7 +53,9 @@ class qa_html_theme_layer extends qa_html_theme_base {
 
            qa_html_theme_base::q_list_and_form($q_list);
 
-		   if (qa_opt('pt_q2a_ad_after_all_questions'))
+		   if (qa_opt('pt_q2a_ad_after_all_questions')
+          && (qa_opt('pt_q2a_only_not_login_users') && !qa_is_logged_in())
+       )
 		   {
 				$this->output(qa_opt('pt_q2a_ad_after_all_questions_codebox'));
 		   }
@@ -57,7 +66,9 @@ class qa_html_theme_layer extends qa_html_theme_base {
         {
            qa_html_theme_base::sidebar();
 
-		   if (qa_opt('pt_q2a_ad_sidebar'))
+		   if (qa_opt('pt_q2a_ad_sidebar')
+          && (qa_opt('pt_q2a_only_not_login_users') && !qa_is_logged_in())
+       )
 		   {
 				$this->output(qa_opt('pt_q2a_ad_sidebar_codebox'));
 		   }
