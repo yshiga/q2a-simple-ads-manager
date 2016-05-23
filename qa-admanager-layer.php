@@ -13,7 +13,7 @@ class qa_html_theme_layer extends qa_html_theme_base {
           && (qa_opt('pt_q2a_only_not_login_users') && !qa_is_logged_in())
         )
 			   {
-           $index = rand (0, 2);
+           $index = rand (0, 3);
            $this->output(qa_opt('pt_q2a_ad_after_question_codebox_' . $index));
 			   }
         }
