@@ -22,6 +22,7 @@ class pt_qa_simple_admanager {
 			qa_opt('pt_q2a_ad_after_question_codebox_1', qa_post_text('pt_q2a_ad_after_question_code_field_1'));
 			qa_opt('pt_q2a_ad_after_question_codebox_2', qa_post_text('pt_q2a_ad_after_question_code_field_2'));
 			qa_opt('pt_q2a_ad_after_question_codebox_3', qa_post_text('pt_q2a_ad_after_question_code_field_3'));
+			qa_opt('pt_q2a_ad_after_question_codebox_4', qa_post_text('pt_q2a_ad_after_question_code_field_4'));
 
 			qa_opt('pt_q2a_ad_after_menu_bar',(bool)qa_post_text('pt_q2a_ad_after_menu_bar'));
 			qa_opt('pt_q2a_ad_after_menu_bar_codebox', qa_post_text('pt_q2a_ad_after_menu_bar_code_field'));
@@ -99,6 +100,16 @@ class pt_qa_simple_admanager {
 			'tags' => 'NAME="pt_q2a_ad_after_question_code_field_3"',
             'rows' => 2,
 		);
+
+		$fields[] = array(
+			'id' => 'pt_q2a_ad_after_question_code_display',
+			'label' => 'Paste HTML Ad5 Code in this box(try 728x90 banner ad)',
+			'type' => 'textarea',
+			'value' => qa_opt('pt_q2a_ad_after_question_codebox_4'),
+			'tags' => 'NAME="pt_q2a_ad_after_question_code_field_4"',
+            'rows' => 2,
+		);
+
 
 		$fields[] = array(
 			'label' => 'Ad after Menu Bar',
